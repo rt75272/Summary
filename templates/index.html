@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>AI Text Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>📝 AI Text Summarizer</h1>
+    <form id="summarize-form">
+        <textarea name="text" placeholder="Enter text here..."></textarea><br><br>
+        <input type="file" name="file"><br><br>
+        <input type="submit" value="Summarize">
+    </form>
+
+    <div class="spinner" id="loading-spinner"></div>
+
+    <div id="summary-box"></div>
+
+    <div id="download-section" style="display:none; margin-top:10px;">
+        <form id="download-form" method="POST" action="/download">
+            <input placeholder="Summary..." type="hidden" name="summary" id="summary-input">
+            <select name="filetype">
+                <option value="txt">TXT</option>
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+            </select>
+            <button type="submit">Download Summary</button>
+        </form>
+    </div>
+</div>
+
+<script src="/static/main.js"></script>
+</body>
+</html>
